@@ -11,8 +11,8 @@ class InterfazRepositorio(Generic(T)):
     #Constructor de la clase
     def __init__(self):
         self.db = dbase.dbConnection()
-        theClass = get_args(self.orig_bases_(0))
-        self.collection = theClass(0).__name__.lower()
+        theClass = get_args(self.__orig_bases__[0])
+        self.collection = theClass[0].__name__.lower()
     
     #Obtiene los valores de referencia de la lista
     def getValuesDBRefFromList(self, theList):
