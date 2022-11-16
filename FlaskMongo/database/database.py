@@ -24,7 +24,7 @@ def dbConnection():
         client = MongoClient(dataConfig['MONGO_URI_SERVER'], tlsCAFile = ca)
         # Conexión Local
         # client = MongoClient(dataConfig['MONGO_URI_LOCAL'], dataConfig['LOCAL_PORT'])
-        db = client("Registraduria_G34")
+        db = client["Registraduria_G34"]
     except ConnectionError:
         print("-- Error de Conexíon con la base de datos (db) --")
     return db

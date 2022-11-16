@@ -6,7 +6,7 @@ import json
 import database.database as dbase
 T = TypeVar('T')
 
-class InterfazRepositorio(Generic(T)):
+class InterfazRepositorio(Generic[T]):
     
     #Constructor de la clase
     def __init__(self):
