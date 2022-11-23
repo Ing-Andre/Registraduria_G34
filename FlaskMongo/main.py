@@ -4,8 +4,6 @@ from flask_cors import CORS
 
 from Controladores.PartidoControlador import PartidoControlador
 
-
-
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -14,8 +12,6 @@ cors = CORS(app)
 ################################
 
 miControladorPartido = PartidoControlador()
-
-
 
 
 ################################
@@ -41,8 +37,11 @@ def getPartidos():
 #Crea partido
 @app.route("/partidos", methods = ["POST"])
 def crearPartido():
+    print("crear partido")
     data = request.get_json()
+    print("data", data)
     json = miControladorPartido.create(data)
+    print("json",json)
     return jsonify(json)
 
 #Para mirar documentos

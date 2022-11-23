@@ -12,7 +12,10 @@ class PartidoControlador():
 
     #Crea documentos
     def create(self, infoPartido):
+        print("crear")
+        print(infoPartido)
         nuevoPartido = Partido(infoPartido)
+        print(nuevoPartido)
         return self.repositorioPartido.save(nuevoPartido)
 
     #Muestra documento
